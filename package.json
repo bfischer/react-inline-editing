@@ -1,7 +1,7 @@
 {
   "name": "react-inline-edit",
   "version": "1.0.0",
-  "description": "An inline editable label built in React.",
+  "description": "An inline editable text component built in React.",
   "main": "main.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -26,7 +26,7 @@
   "author": "Blake Fischer",
   "license": "MIT",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/bfischer/ReactInlineEdit/issues"
   },
   "homepage": "",
   "dependencies": {
