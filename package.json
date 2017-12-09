@@ -1,7 +1,7 @@
 {
-  "name": "react-inline-edit",
+  "name": "react-inline-editing",
   "version": "1.0.0",
-  "description": "An inline editable text component built in React.",
+  "description": "An inline, customizable and editable text component built in React.",
   "main": "main.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bfischer/ReactInlineEdit.git"
+    "url": "git+https://github.com/bfischer/react-inline-editing.git"
   },
   "keywords": [
     "react",
@@ -17,6 +17,8 @@
     "inline",
     "edit",
     "editor",
+    "editing",
+    "text",
     "input",
     "form",
     "forms",
@@ -26,7 +28,7 @@
   "author": "Blake Fischer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bfischer/ReactInlineEdit/issues"
+    "url": "https://github.com/bfischer/react-inline-editing/issues"
   },
   "homepage": "",
   "dependencies": {
