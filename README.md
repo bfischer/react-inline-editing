@@ -8,5 +8,5 @@ _* Required_
 
 | Prop | Type   | Description
 | -----| -------| -------- |
-| text | string | Text to be displayed on both the label and initially in the editor | * *
+| text (*)| string | Text to be displayed on both the label and initially in the editor |
 | isEditing | bool | Flags whether the label should be in editor mode
