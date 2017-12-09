@@ -1,0 +1,45 @@
+{
+  "name": "react-inline-edit",
+  "version": "1.0.0",
+  "description": "An inline editable label built in React.",
+  "main": "main.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run node_modules/webpack/bin/webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bfischer/ReactInlineEdit.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "inline",
+    "edit",
+    "editor",
+    "input",
+    "form",
+    "forms",
+    "label",
+    "labels"
+  ],
+  "author": "Blake Fischer",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "react": "^16.2.0",
+    "webpack": "^3.10.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "webpack": "^3.10.0"
+  }
+}
