@@ -10,10 +10,10 @@ var path = require('path');
      module: {
          loaders: [
              {
-                 test: /\.js$/,
+                 test: /\.js(x)$/,
                  loader: 'babel-loader',
                  query: {
-                     presets: ['es2015']
+                     presets: ['es2015', 'react']
                  }
              }
          ]
