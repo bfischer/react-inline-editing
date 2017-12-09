@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class EditableLabel extends React.Component {
     constructor(props) {
@@ -46,16 +47,16 @@ export default class EditableLabel extends React.Component {
                     onChange={this._handleChange}
                     onBlur={this._handleFocus}
                     style={{ 
-                    	width: this.props.width,
-                        height: this.props.height,
+                    	width: this.props.inputWidth,
+                        height: this.props.inputHeight,
                         fontSize: this.props.inputFontSize,
                         fontWeight: this.props.inputFontWeight,
-                        borderWidth: this.props.borderWidth,
+                        borderWidth: this.props.inputBorderWidth,
                			
                     }}
-                    maxLength={this.props.maxLength}
-                    placeholder={this.props.placeHolder}
-                    tabIndex={this.props.tabIndex}
+                    maxLength={this.props.inputMaxLength}
+                    placeholder={this.props.inputPlaceHolder}
+                    tabIndex={this.props.inputTabIndex}
                     autoFocus/>
         	</div>
         }
@@ -72,3 +73,25 @@ export default class EditableLabel extends React.Component {
         </div>;
     }
 }
+
+EditableLabel.propTypes = {
+    text: PropTypes.string.isRequired,
+    isEditing: PropTypes.bool,
+
+    labelClassName: PropTypes.string,
+    labelFontSize: PropTypes.string,
+    labelFontWeight: PropTypes.string,
+
+    inputMaxLength: PropTypes.number,
+    inputPlaceHolder: PropTypes.string,
+    inputTabIndex: PropTypes.number,
+    inputWidth: PropTypes.string,
+    inputHeight: PropTypes.string,
+    inputFontSize: PropTypes.string,
+    inputFontWeight: PropTypes.string,
+    inputClassName: PropTypes.string,
+    inputBorderWidth: PropTypes.string,
+
+    onFocus: PropTypes.func,
+    onFocusOut: PropTypes.func
+};
