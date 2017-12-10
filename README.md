@@ -3,6 +3,8 @@ This is an inline, editable text/label component built in React.
 
 The `<EditableLabel />` allows the user to simply click and edit text inline. It consists of a `<label>` element to display the unedited text and an `<input />` element to allow editing.
 
+![Example animation gif](https://imgur.com/pvvQWU3)
+
 # Installation
 `npm install --save react-inline-editing`
 
