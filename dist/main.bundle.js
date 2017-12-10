@@ -550,7 +550,6 @@ var EditableLabel = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                'TESTING TESTING',
                 _react2.default.createElement(
                     'label',
                     { className: this.props.labelClassName,
