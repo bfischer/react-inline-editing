@@ -75,7 +75,7 @@ export default class EditableLabel extends React.Component {
 }
 
 EditableLabel.propTypes = {
-    text: PropTypes.string.isRequired,
+    text: PropTypes.string,
     isEditing: PropTypes.bool,
 
     labelClassName: PropTypes.string,
