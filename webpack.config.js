@@ -19,6 +19,9 @@ var path = require('path');
              }
          ]
      },
+     externals: {
+        'react': 'commonjs react'
+     },
      stats: {
          colors: true
      },

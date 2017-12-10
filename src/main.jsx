@@ -33,7 +33,7 @@ export default class EditableLabel extends React.Component {
 	
     _handleChange() {
     	this.setState({
-        	text: this.refs.textInput.value,
+        	text: this.textInput.value,
         });
     }
 
@@ -42,7 +42,7 @@ export default class EditableLabel extends React.Component {
         	return <div>
         	    <input type="text" 
                     className={this.props.inputClassName}
-                    ref="textInput"
+                    ref={(input) => { this.textInput = input; }}
                     value={this.state.text} 
                     onChange={this._handleChange}
                     onBlur={this._handleFocus}
@@ -62,6 +62,7 @@ export default class EditableLabel extends React.Component {
         }
     
         return <div>
+            TESTING TESTING
             <label className={this.props.labelClassName}
                 onClick={this._handleFocus}
                 style={{
@@ -75,7 +76,7 @@ export default class EditableLabel extends React.Component {
 }
 
 EditableLabel.propTypes = {
-    text: PropTypes.string,
+    text: PropTypes.string.isRequired,
     isEditing: PropTypes.bool,
 
     labelClassName: PropTypes.string,
