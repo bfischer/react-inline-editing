@@ -1,6 +1,6 @@
 {
   "name": "react-inline-editing",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "An inline, customizable and editable text component built in React.",
   "main": "./dist/main.bundle.js",
   "scripts": {
