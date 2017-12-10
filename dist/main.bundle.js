@@ -1,3 +1,4 @@
+module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -754,7 +755,7 @@ exports.default = EditableLabel;
 
 
 EditableLabel.propTypes = {
-    text: _propTypes2.default.string.isRequired,
+    text: _propTypes2.default.string,
     isEditing: _propTypes2.default.bool,
 
     labelClassName: _propTypes2.default.string,

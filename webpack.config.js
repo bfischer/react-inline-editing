@@ -5,7 +5,8 @@ var path = require('path');
      entry: './src/main.jsx',
      output: {
          path: path.resolve(__dirname, 'dist'),
-         filename: 'main.bundle.js'
+         filename: 'main.bundle.js',
+         libraryTarget: 'commonjs2'
      },
      module: {
          loaders: [
