@@ -62,7 +62,6 @@ export default class EditableLabel extends React.Component {
         }
     
         return <div>
-            TESTING TESTING
             <label className={this.props.labelClassName}
                 onClick={this._handleFocus}
                 style={{
