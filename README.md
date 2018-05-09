@@ -34,7 +34,7 @@ _* Required_
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import EditableLabel from 'react-inline-edit';
+import EditableLabel from 'react-inline-editing';
 
 class App extends React.Component {
     constructor(props){
