@@ -15,6 +15,8 @@ _* Required_
 | -----| -------| -------- |
 | text (*)| string | Text to be displayed on both the label and initially in the editor |
 | isEditing | bool | Flags whether the label should be in editor mode
+| emptyEdit | bool | Flags whether the label should be in editor mode when text is empty('' or undefined)
+| labelPlaceHolder | string | Label value to display when text is not present
 | labelClassName | string | Class name for the text styling
 | labelFontSize | string | Font size for the text 
 | labelFontWeight | string | Font weight for the text
@@ -34,7 +36,7 @@ _* Required_
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import EditableLabel from 'react-inline-edit';
+import EditableLabel from 'react-inline-editing';
 
 class App extends React.Component {
     constructor(props){

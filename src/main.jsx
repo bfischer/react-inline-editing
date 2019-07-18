@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const ENTER_KEY_CODE = 13;
+const DEFAULT_LABEL_PLACEHOLDER = "Click To Edit";
+
 export default class EditableLabel extends React.Component {
     constructor(props) {
         super(props);
@@ -12,29 +15,63 @@ export default class EditableLabel extends React.Component {
         
         this._handleFocus = this._handleFocus.bind(this);
         this._handleChange = this._handleChange.bind(this);
+        this._handleKeyDown = this._handleKeyDown.bind(this);
+    }
+
+    componentWillReceiveProps(nextProps){
+        this.setState({
+            text: nextProps.text || "",
+            isEditing: this.state.isEditing || nextProps.isEditing || false
+        });
+    }
+    
+    _isTextValueValid(){
+        return (typeof this.state.text != "undefined" && this.state.text.trim().length > 0);
     }
     
     _handleFocus() {
-    	if(this.state.isEditing) {
-        	if(typeof this.props.onFocusOut === 'function') {
-        		this.props.onFocusOut(this.state.text);
+        if(this.state.isEditing) {
+            if(typeof this.props.onFocusOut === 'function') {
+                this.props.onFocusOut(this.state.text);
             }
         }
         else {
-        	if(typeof this.props.onFocus === 'function') {
-	        	this.props.onFocus(this.state.text);
+            if(typeof this.props.onFocus === 'function') {
+                this.props.onFocus(this.state.text);
             }
         }
-    
-    	this.setState({
-        	isEditing: !this.state.isEditing,
-        });
+
+        if(this._isTextValueValid()){
+            this.setState({
+                isEditing: !this.state.isEditing,
+            });
+        }else{
+            if(this.state.isEditing){
+                this.setState({
+                    isEditing: this.props.emptyEdit || false
+                });
+            }else{
+                this.setState({
+                    isEditing: true
+                });
+            }
+        }
     }
 	
     _handleChange() {
     	this.setState({
         	text: this.textInput.value,
         });
+    }
+
+    _handleKeyDown(e){
+        if(e.keyCode === ENTER_KEY_CODE){
+            this._handleEnterKey();
+        }
+    }
+
+    _handleEnterKey(){
+        this._handleFocus();
     }
 
     render() {
@@ -46,6 +83,7 @@ export default class EditableLabel extends React.Component {
                     value={this.state.text} 
                     onChange={this._handleChange}
                     onBlur={this._handleFocus}
+                    onKeyDown={this._handleKeyDown}
                     style={{ 
                     	width: this.props.inputWidth,
                         height: this.props.inputHeight,
@@ -60,7 +98,8 @@ export default class EditableLabel extends React.Component {
                     autoFocus/>
         	</div>
         }
-    
+        
+        const labelText = this._isTextValueValid() ? this.state.text : (this.props.labelPlaceHolder || DEFAULT_LABEL_PLACEHOLDER);
         return <div>
             <label className={this.props.labelClassName}
                 onClick={this._handleFocus}
@@ -68,7 +107,7 @@ export default class EditableLabel extends React.Component {
                 	fontSize: this.props.labelFontSize,
                     fontWeight: this.props.labelFontWeight,
                 }}>
-                {this.state.text}
+                {labelText}
             </label>
         </div>;
     }
@@ -77,6 +116,8 @@ export default class EditableLabel extends React.Component {
 EditableLabel.propTypes = {
     text: PropTypes.string.isRequired,
     isEditing: PropTypes.bool,
+    emptyEdit: PropTypes.bool,
+    labelPlaceHolder: PropTypes.string,
 
     labelClassName: PropTypes.string,
     labelFontSize: PropTypes.string,
